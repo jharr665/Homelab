@@ -1,0 +1,14 @@
+# Getting Started — Umbrella Repo
+
+This repo is a **map** to the individual stack repos. Start at Infrastructure, then Platform, then layer app and security stacks.
+
+## Publish Flow (repeat per stack)
+```bash
+unzip <stack>.zip -d <stack>
+cd <stack>
+git init && git add .
+git commit -m "feat: initial <stack>"
+git branch -M main
+git remote add origin git@github.com:<your-username>/<stack>.git
+git push -u origin main
+```
