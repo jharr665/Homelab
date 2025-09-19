@@ -14,75 +14,76 @@
 flowchart TB
   %% Layers
   subgraph L0["Infrastructure"]
-    PVE[Proxmox Hosts]
-    TN[TrueNAS (ZFS)]
-    FW[OPNsense Firewall]
-    NET[10GbE Switch + VLANs]
+    PVE["Proxmox Hosts"];
+    TN["TrueNAS (ZFS)"];
+    FW["OPNsense Firewall"];
+    NET["10GbE Switch + VLANs"];
   end
 
   subgraph L1["Platform"]
-    RKE2[Rancher + RKE2 Kubernetes]
-    Cilium[Cilium CNI]
-    Ingress[Ingress + WAF]
-    CertM[cert-manager]
-    Auth[Authentik SSO]
-    Harbor[Harbor Registry]
-    Argo[ArgoCD GitOps]
-    ESO[External Secrets]
+    RKE2["Rancher + RKE2 Kubernetes"];
+    Cilium["Cilium CNI"];
+    Ingress["Ingress + WAF"];
+    CertM["cert-manager"];
+    Auth["Authentik SSO"];
+    Harbor["Harbor Registry"];
+    Argo["ArgoCD GitOps"];
+    ESO["External Secrets"];
   end
 
   subgraph L2["App Stacks"]
-    Media[Jellyfin + Servarr + Gluetun]
-    Others[Paperless / Immich / etc.]
+    Media["Jellyfin + Servarr + Gluetun"];
+    Others["Paperless / Immich / etc."];
   end
 
   subgraph L3["Security & SOC"]
-    Wazuh[Wazuh SIEM/XDR]
-    SO[Security Onion (Suricata/Zeek)]
-    Falco[Falco]
-    Kyverno[Kyverno]
-    Trivy[Trivy Operator]
-    CrowdSec[CrowdSec]
+    Wazuh["Wazuh SIEM/XDR"];
+    SO["Security Onion (Suricata/Zeek)"];
+    Falco["Falco"];
+    Kyverno["Kyverno"];
+    Trivy["Trivy Operator"];
+    CrowdSec["CrowdSec"];
   end
 
   subgraph L4["Observability & Compliance"]
-    Prom[Prometheus]
-    Graf[Grafana]
-    Loki[Loki/Promtail]
-    Kuma[Uptime Kuma]
-    Score[Compliance Scorecards]
+    Prom["Prometheus"];
+    Graf["Grafana"];
+    Loki["Loki/Promtail"];
+    Kuma["Uptime Kuma"];
+    Score["Compliance Scorecards"];
   end
 
   subgraph L5["Automation & DevSecOps"]
-    CI[GitHub Actions CI/CD]
-    Cosign[Cosign (sign/attest)]
-    SBOM[SBOM + Trivy]
-    TF[Terraform]
-    Ansible[Ansible]
-    MCP[MCP Server]
+    CI["GitHub Actions CI/CD"];
+    Cosign["Cosign (sign/attest)"];
+    SBOM["SBOM + Trivy"];
+    TF["Terraform"];
+    Ansible["Ansible"];
+    MCP["MCP Server"];
   end
 
-  subgraph L6["Red‑Team & Research"]
-    Kali[Kali VM]
-    Scenarios[Attack Scenarios]
+  subgraph L6["Red-Team & Research"]
+    Kali["Kali VM"];
+    Scenarios["Attack Scenarios"];
   end
 
   %% Flows
-  PVE --- TN
-  PVE --- NET
-  FW --- NET
-  L0 --> L1
-  Harbor --> L1
-  L1 --> L2
-  L2 --> L3
-  L3 --> L4
-  CI --> Harbor
-  Harbor --> Argo
-  Argo --> RKE2
-  TF --> L0
-  Ansible --> L1
-  MCP --> L5
-  L6 -.tests & validates detections.-> L3
+  PVE --- TN;
+  PVE --- NET;
+  FW --- NET;
+  L0 --> L1;
+  Harbor --> L1;
+  L1 --> L2;
+  L2 --> L3;
+  L3 --> L4;
+  CI --> Harbor;
+  Harbor --> Argo;
+  Argo --> RKE2;
+  TF --> L0;
+  Ansible --> L1;
+  MCP --> L5;
+  L6 -. "tests & validates detections" .-> L3;
+
 ```
 
 ---
