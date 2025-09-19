@@ -90,22 +90,21 @@ flowchart TB
 
 ## 📚 Repositories (Stacks)
 
-> Replace `<your-username>` with your GitHub handle after you publish each repo.
 
 - **Infrastructure & Virtualization** — Proxmox, TrueNAS (ZFS), OPNsense  
-  `https://github.com/<your-username>/homelab-infrastructure-stack`
+  `https://github.com/jharr665/Homelab-Infrastructure-Stack`
 - **Platform (Kubernetes + GitOps + SSO)** — Rancher/RKE2, Cilium, Ingress WAF, cert-manager, Harbor, ArgoCD, Authentik, Kyverno, Falco, Trivy  
-  `https://github.com/<your-username>/homelab-platform-stack`
+  `https://github.com/jharr665/Homelab-Platform-Stack`
 - **Media Stack** — Jellyfin + Servarr + qBittorrent via Gluetun, Caddy + Authentik, optional extras  
-  `https://github.com/<your-username>/homelab-media-stack`
+  `https://github.com/jharr665/Homelab-Media-Stack`
 - **Security & SOC** — Wazuh, Security Onion, Falco, CrowdSec, Kyverno, Trivy Operator  
-  `https://github.com/<your-username>/homelab-security-soc-stack`
+  `https://github.com/jharr665/Homelab-Security-SOC-Stack`
 - **Observability & Compliance** — Prometheus/Grafana, Loki/Promtail, Uptime Kuma, scorecards  
-  `https://github.com/<your-username>/homelab-observability-compliance-stack`
+  `https://github.com/jharr665/Homelab-Observability-Compliance-Stack`
 - **Automation & DevSecOps** — ArgoCD, Terraform, Ansible, CI/CD, Cosign, SBOM/Trivy, MCP  
-  `https://github.com/<your-username>/homelab-automation-devsecops-stack`
+  `https://github.com/jharr665/Homelab-Automation-Devsecops-Stack`
 - **Red‑Team & Research** — Kali VM cloud‑init, legal/ethics, scenarios  
-  `https://github.com/<your-username>/homelab-redteam-research-stack`
+  `https://github.com/jharr665/Homelab-Redteam-Research-Stack`
 
 ---
 
